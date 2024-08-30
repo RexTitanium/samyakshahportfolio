@@ -1,0 +1,153 @@
+.about-div-wrapper {
+    width: 50vw;
+    text-align: center;
+    > div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 5vh;
+    }
+}
+
+.profile-picture-container {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        animation: fade 300ms ease forwards;
+      transform: translateY(15%);
+      width: 250%;
+      height: 250%;
+      object-fit: cover;
+    }
+  }
+
+  .app-dark {
+    .profile-picture-container {
+      filter: drop-shadow(0px 0px 1vw #36240f);
+    }
+  }
+
+  .app-light {
+    .profile-picture-container {
+      
+    filter: drop-shadow(0px 0px 1vw #ffcb8b);
+    }
+  }
+
+  .aboutme-desc-container {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .aboutme-desc-story {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .aboutme-story-header {
+    padding: 10px 0px;
+    font-size: 140%;
+    font-weight: 600;
+    border-bottom: 1px solid #8b8b8b;
+  }
+
+  .skill-row{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    .center-skill-div {
+      border: none !important;
+      text-align: center;
+      filter: drop-shadow(0px 0px 50px #ff8800);
+    }
+    > div {
+      width: 5vw;
+      display: flex;
+      background-color: #1d100065;
+      cursor: pointer;
+      border: 1px solid #ff8c00;
+      padding: 10px;
+      border-radius: 20px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      transition: all 150ms ease;
+      overflow: hidden;
+      &:hover {
+        scale: 1.05;
+        transition: all 150ms ease;
+      }
+
+      > svg {
+        width: 50%;
+        height: 50%;
+      }
+      > div {
+        font-size: small;
+      }
+    }
+  }
+
+  .non-story {
+    gap: 10vw;
+  }
+
+  .app-light .skill-row {
+    > div{
+    background-color: #ffffff65 !important;
+    }
+    
+    > .center-skill-div {
+      filter: drop-shadow(0px 0px 50px #ff8800) !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .aboutpage-container {
+    .non-story {
+      width: 100%;
+      flex-direction: row;
+      > div {
+        width: 90%;
+      }
+    }
+  }
+
+  .aboutme-desc-container {
+    width: fit-content;
+    font-size: 1.25vh;
+  }
+
+  .skill-row {
+    > div {
+      width: 7vh;
+      height: 5vh;
+      >div {
+        
+        font-size: 80%;
+      }
+    }
+  }
+  .about-div-wrapper {
+    width: 80vw;
+    > div {
+      > span {
+        font-size: 4vw !important;
+      }
+    }
+  }
+  .profile-picture-container {
+    width: 15vh;
+    height: 15vh;
+  }
+}

@@ -1,0 +1,5 @@
+My Story?
+I was always intrigued by the programming languages from a very young age, and developed a chatbot while still being in Middle School.
+I pursued a degree in Electronics and Telecommunication as my undergraduate majors.
+During my undergraduate semester, I got into Artificial Intelligence and Machine Learning Models.
+I also took an online course to develop web applications using React JS and got into Full Stack web developement using MERN stack.

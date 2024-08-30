@@ -1,0 +1,275 @@
+.taskbar-container {
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+  }
+
+  .taskbar-minimized {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    height: 10px;
+    display: flex;
+    justify-content: center; 
+    z-index: 999;
+  }
+  
+  .taskbar-wrapper {
+    padding: 5px 15px 5px 15px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: fit-content;
+    gap: 20px;
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgb(0,0,0,0.35);
+  }
+
+  .taskbar-wrapper-minimized {
+    padding: 0px 15px 0px 15px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 16.5%;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgb(0,0,0,0.35);
+  }
+
+
+  .taskbar-minimized-up-arrow-container {
+    width: 40px;
+    height: 0px;
+    position: fixed;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #cbcbcb;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .taskbar-light {
+    background: #cbcbcb;
+    .taskbar-links a{
+      color: #525252;
+      transition: all 150ms ease;
+      &:hover {
+      color: #2c2c2c;
+      transition: all 150ms ease;
+    }
+  }
+
+    .link-active {
+      color: #858585 !important;
+      transition: all 150ms ease;
+    }
+  }
+  
+  .social-media-links {
+    padding: 0px 10px 0px 10px;
+    border-left: 1px solid #8b8b8b;
+    border-right: 1px solid #8b8b8b;
+  }
+
+  .open-taskbar-btn  {
+    width: 100%;
+    border: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .taskbar-dark {
+    background: #1f1f1f;
+    color: #8b8b8b;
+    .header {
+      color: white;
+    }
+    .taskbar-links a{
+      color: #8b8b8b;
+      transition: all 150ms ease;
+    }
+    .taskbar-links a:hover {
+        color: #bdbdbd;
+        transition: all 150ms ease;
+    }
+    
+    .link-active {
+      color: #535353 !important;
+      transition: all 150ms ease;
+    }
+  }
+
+  .taskbar-links {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    cursor: pointer;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .close-btn {
+    padding: 5px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .pdf-component-container, .reload-component-container {
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    z-index: 500;
+    bottom: 40px;
+    animation: popUp 150ms ease forwards;
+  }
+
+  
+
+  .pdf-component-container-minimized, .reload-component-container-minimized {
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    z-index: 500;
+    animation: popDown 800ms ease forwards;
+    .reload-component, .ff-component, .pdf-component, .gb-component{
+      width: 0px;
+      height: 0px;
+      padding: 0px;
+      content-visibility: hidden;
+      transition: all 300ms ease;
+    }
+  }
+
+  .reload-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgb(0,0,0,0.35);
+    transition: color 150ms ease;
+    height: 20px;
+    width: 20px;
+    &:hover {
+      color: #bdbdbd;
+      transition: color 150ms ease;
+    }
+  }
+
+  .pdf-component, .ff-component, .gb-component {
+    padding: 5px 8px 5px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    height: fit-content;
+    box-shadow: 0px 2px 4px rgb(0,0,0,0.35);
+    transition: color 150ms ease;
+    &:hover {
+      color: #bdbdbd;
+      transition: color 150ms ease;
+    }
+  }
+
+  .ff-component, .gb-component {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .taskbar-dark {
+    .github-logo, .linkedIn-logo {
+    &:hover {
+      color: white;
+      transition: color 150ms ease;
+    }
+  }
+}
+
+  .taskbar-light {
+    .github-logo , .linkedIn-logo{
+      color: #525252;
+      &:hover {
+        color: #2c2c2c;
+        transition: color 150ms ease;
+      }
+    }
+  }
+
+  .reload-animation > svg {
+    animation: reload 300ms ease infinite forwards;
+  }
+  
+  .gb-component {
+    transform: rotate(180deg);
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .taskbar-container {
+      height: fit-content;
+    }
+
+    .taskbar-wrapper-minimized {
+      width: 80%;
+    }
+
+    .taskbar-wrapper {
+      padding: 15px;
+      width: 80vw;
+      flex-wrap: wrap;
+      gap: 5px;
+      height: fit-content;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .taskbar-links {
+        border-bottom: 1px solid #bdbdbd;
+        padding-bottom: 10px;
+        font-size: 3.7vw;
+        justify-content: space-between;
+        &:nth-child(1) {
+          grid-column: span 2;
+        }
+      }
+      .social-media-links {
+        border-left: none;
+        padding: 0px;
+      }
+    }
+
+    .pdf-component-container {
+      height: 15.5%;
+    } 
+
+    .reload-component-container {
+      height: 25%;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .pdf-component-container {
+      height: 13.5%;
+    }
+    .reload-component-container {
+      height: 22%;
+    }
+  }

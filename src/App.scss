@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+.app-main {
+  width: 100vw;
+  height: 100vh;
+  transition: all 300ms ease;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  z-index: -999;
+  font-family: 'Inter', sans-serif;
+}
+
+.app-dark {
+  background: radial-gradient(circle at center ,rgb(28, 12, 0) 1px 1px, #000000);
+}
+
+.app-light {
+  background: radial-gradient(rgb(255, 245, 239) 1px 1px, #ffffff);
+}
+
+.move-up {
+  bottom: 20px;
+  animation: moveUp 300ms ease 150ms forwards;
+}
+
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5c5c5c;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+
+.arrow-left {
+  position: fixed;
+  top: 50vh;
+  left: 0.5vw;
+  z-index: 4000;
+  transition: color 150ms ease;
+  cursor: pointer;
+  > svg {
+    font-size: 2vw;
+  }
+}
+
+.arrow-left.color-light:hover {
+  color: #ffffff;
+  transition: color 150ms ease;
+}
+
+.arrow-right {
+  position: fixed;
+  top: 50vh;
+  right:0.5vw;
+  z-index: 4000;
+  cursor: pointer;
+  > svg {
+    font-size: 2vw;
+  }
+}
+
+.arrow-left.color-light:hover,.arrow-right.color-light:hover  {
+  color: #ffffff;
+  transition: color 150ms ease;
+}
+
+@media screen and (max-width: 768px) {
+  .arrow-right {
+    right: 2vh;
+  }
+  .arrow-left > svg, .arrow-right > svg {
+    font-size: 3vh;
+  }
+}

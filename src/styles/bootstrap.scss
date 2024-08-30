@@ -1,0 +1,267 @@
+
+  .dim-background {
+      filter: brightness(50%) !important;
+  }
+  
+  .fullDims {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .fullWidth {
+    width: 100%;
+  }
+
+  .fullHeight {
+    height: 100%;
+  }
+
+  .border-dark {
+    border: 1px solid #252525 ;
+  }
+
+  .border-light {
+    border: 1px solid #b6b6b6;
+  }
+  .flex {
+    display: flex !important;
+  }
+  
+  .flexDirectionColumn {
+    flex-direction: column !important;
+  }
+  
+  .px-xsm{
+    padding: 5px !important;
+  }
+
+  .px-sm {
+    padding: 10px !important;
+  }
+  
+  .px-md{
+    padding: 20px !important;
+  }
+
+  .px-lg {
+    padding: 40px !important;
+  }
+
+  .px-xlg {
+    padding: 50px !important;
+  }
+  
+  .flexDirectionRow {
+    flex-direction: row !important;
+  }
+  
+  .jc-c {
+    justify-content: center !important;
+  }
+
+  .jc-l {
+    justify-content: left !important;
+  }
+
+  .jc-r {
+    justify-content: right !important;
+  }
+  
+  .align-c {
+    align-items: center !important;
+  }
+
+  .bg-light {
+    background: #ffffff !important;
+  }
+
+  .bg-light-grey {
+    background: #eeeeee !important;
+  }
+  
+  .bg-dark-grey {
+    background: #1b1b1b !important;
+  }
+
+  .bg-dark {
+    background: black !important;
+  }
+  
+  .txt-dark {
+    color: #bdbdbd !important;
+  }
+
+.theme-btn {
+    outline: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0.7;
+    cursor: pointer;
+    background: none;
+    transition: all 150ms ease;
+  }
+  
+  .btn-light {
+    border: 1.5px solid #bbbbbb;
+    padding: 5px;
+    color: #525252;
+    transition: all 150ms ease;
+  }
+  
+  .btn-light:hover {
+    border: 1.5px solid #979797;
+    background: rgb(0,0,0,0.04);
+    color: #2c2c2c;
+    transition: all 150ms ease;
+  }
+  
+  .btn-red {
+    border: 1.5px solid #bbbbbb00;
+    padding: 5px;
+    color: #868686;
+    transition: all 150ms ease;
+  }
+  
+  .btn-red:hover {
+    border: 1.5px solid #ff6b6b00;
+    background: rgb(255, 89, 89);
+    color: #2e2e2e;
+    transition: all 150ms ease;
+  }
+  
+
+  .btn-blue {
+    border: 1.5px solid #bbbbbb00;
+    padding: 5px;
+    color: #868686;
+    transition: all 150ms ease;
+  }
+  
+  .btn-blue:hover {
+    border: 1.5px solid #ff6b6b00;
+    background: rgb(89, 189, 255);
+    color: #2e2e2e;
+    transition: all 150ms ease;
+  }
+
+  .btn-dark {
+    border: 1.5px solid #494949;
+    padding: 5px;
+    color: #8b8b8b;
+    transition: all 150ms ease;
+  }
+  
+  .btn-dark:hover {
+    border: 1.5px solid #717171;
+    color: #bdbdbd;
+    background: rgb(255,255,255,0.04);
+    transition: all 150ms ease;
+  }
+  
+  .transition-150-ease {
+    transition: all 150ms ease !important;
+  }
+  
+  .transition-300-ease {
+    transition: all 300ms ease !important;
+  }
+  
+  .transition-300-ease-in {
+    transition: all 300ms ease-in !important;
+  }
+
+  .gp-xsm {
+    gap: 5px !important;
+  }
+
+  .gp-sm {
+    gap: 10px !important;
+  }
+
+  .gp-md {
+    gap: 20px !important;
+  }
+
+  .gp-lg {
+    gap: 30px !important;
+  }
+
+  .gp-xlg {
+    gap: 50px !important;
+  }
+
+  
+  .br-xs {
+    border-radius: 5px !important;
+  }
+  
+  .br-sm {
+    border-radius: 10px !important;
+  }
+
+  .br-md {
+    border-radius: 15px !important;
+  }
+  
+  .br-lg {
+    border-radius: 30px !important;
+  }
+
+  .br-xlg {
+    border-radius: 50px !important;
+  }
+
+  .jc-sb {
+    justify-content: space-between !important;
+  }
+
+  .textAlignCenter {
+    text-align: center !important;
+  }
+  
+  .color-x-light {
+    color: #fff;
+  }
+
+  .color-light {
+    color: #9e9e9e;
+  }
+
+  .color-x-dark {
+    color: #000;
+  }
+
+  .color-dark {
+    color: #1b1b1b;
+  }
+
+  .no-shadow {
+    box-shadow: none;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .br-circle {
+    border-radius: 50% !important;
+  }
+
+  .no-border {
+    border: none;
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
+  .vr {
+    border-left: 1px solid rgb(255, 255, 255);
+    height: 2vw;
+  }

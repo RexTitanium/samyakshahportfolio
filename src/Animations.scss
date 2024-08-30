@@ -1,0 +1,104 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideRight {
+    from {
+      transform: translateX(400px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes moveUp {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 20px;
+    }
+  }
+
+  
+@keyframes scaleUp {
+    0% {
+        scale:0.7;
+    }
+
+    50% {
+        scale: 1;
+    }
+
+    100% {
+        scale: 0.7;
+    }
+}
+
+@keyframes fadeBlink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+
+@keyframes progressBar {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+
+@keyframes popUp {
+  0% {
+    bottom: 40px;
+  }
+  80%{
+    bottom: 93px;
+  }
+  100% {
+    bottom: 90px;
+  }
+}
+
+@keyframes popDown {
+  0% {
+    bottom: 90px;
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+
+@keyframes reload {
+  0% {
+    transform: rotate(0deg)
+  } 
+  50% {
+    transform: rotate(180deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
