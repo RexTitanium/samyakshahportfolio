@@ -39,7 +39,7 @@ function About({props}) {
         {showStory &&
         <div>
           <div className='profile-picture-container'>
-            <img src='../../../assets/images/Samyak.jpg' className='profile-picture'/>
+            <img src='/assets/images/Samyak.jpg' className='profile-picture'/>
           </div>
         <TypeAnimation
         sequence={[...story_mode_data, () => handleTypingAnimationComplete()]}

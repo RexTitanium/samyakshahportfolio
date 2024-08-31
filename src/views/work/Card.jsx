@@ -97,7 +97,7 @@ function Card(props) {
     <div className="card-container">
         <div onClick={() => handleOpenModal(card.projectLink)}>
             <div className={`transition-150-ease card-bg-img-container`} >
-                <img src={`../../../../assets/images/website_snapshots/${card?.imageLink}`} alt='placeholder'/>
+                <img src={`/assets/images/website_snapshots/${card?.imageLink}`} alt='placeholder'/>
             </div>
             <div className={`transition-150-ease card-links-container`} >
                 <div className='card-links-list-wrapper'>
