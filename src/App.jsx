@@ -20,7 +20,7 @@ function App() {
         <DarkModeProvider setMinimizeTaskbar={setMinimizeTaskbar}>
               <Taskbar skipToEnd={skipToEnd} setSkipToEnd={setSkipToEnd} minimizeTaskbar={minimizeTaskbar} setMinimizeTaskbar={ setMinimizeTaskbar}/>
                 <Routes>
-                  <Route path="/" element={<Navigate to="/home" replace={true} />}/>
+                  <Route path="*" element={<Navigate to="/home" replace={true} />}/>
                   <Route path='/home' element={<Home/>} />
                   <Route path='/work' element={<Work />} />
                   <Route path='/mystory' element={<About props={{skipToEnd, setSkipToEnd}}/>} />
