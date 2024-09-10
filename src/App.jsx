@@ -19,9 +19,23 @@ function App() {
   const storyView = useRef(null)
   const storyInView = useInView(storyView)
 
+  const portfolioView = useRef(null)
+  const portfolioInView = useInView(portfolioView)
+  
+  const homeRef = useRef(null)
+  const homeInView = useInView(homeRef)
+  
   const workRef = useRef(null)
+  const workInView = useInView(workRef)
+
+  const contactRef = useRef(null)
+  const contactInView = useInView(contactRef)
 
   const scrollToWork = () => workRef.current.scrollIntoView()  
+  const scrollToHome = () => homeRef.current.scrollIntoView()
+  const scrollToStory = () => storyView.current.scrollIntoView()
+  const scrollToContact = () => contactRef.current.scrollIntoView()
+  const scrollToPortfolio = () => portfolioView.current.scrollIntoView()
   return (
     <>
     {window.innerWidth > 768 ?
@@ -40,22 +54,42 @@ function App() {
         </Router>
         :
 
-        <HRouter>
+        <Router>
           <DarkModeProvider setMinimizeTaskbar={setMinimizeTaskbar}>
-            <Home scrollToWork={scrollToWork}/>
-            <div className='fullDims flex jc-c align-c'>
-              <div ref={storyView} style={{minWidth: '10vw', minHeight: '10vh'}}>
+            
+            <Taskbar skipToEnd={skipToEnd} setSkipToEnd={setSkipToEnd} minimizeTaskbar={minimizeTaskbar} setMinimizeTaskbar={ setMinimizeTaskbar} 
+              storyInView={storyInView} portfolioInView={portfolioInView} homeInView={homeInView} scrollToHome={scrollToHome}
+              scrollToContact={scrollToContact} scrollToPortfolio={scrollToPortfolio} scrollToStory={scrollToStory}
+              scrollToWork={scrollToWork} workInView={workInView} contactInView={contactInView}
+            />
+
+            <Routes>
+              <Route path="*" element={<Navigate to="/" replace={true} />}/>
+            </Routes>
+            <div className="fullDims" ref={homeRef}><Home scrollToWork={scrollToWork}/></div>
+            <div style={{width: '100vw', height: '10vh'}}></div>
+            <div className='fullDims flex jc-c align-c' ref={storyView}>
               {storyInView &&
               <>
                 <About props={{skipToEnd, setSkipToEnd}}/>
               </>
               }
-              </div></div>
+            </div>
+              
+            <div style={{width: '100vw', height: '10vh'}}></div>
             <div ref={workRef}><Work /></div>
-            <Portfolio/>
+            <div className='flex jc-c align-c'>
+              <div ref={portfolioView} style={{minWidth: '10vw', minHeight: '10vh'}}>
+              {portfolioInView &&
+                <Portfolio/>
+              }
+              </div>
+            </div>
+            <div style={{width: '100vw', height: '10vh'}}></div>
             <Contact/>
+            <div style={{width: '100vw', height: '10vh'}} ref={contactRef}></div>
           </DarkModeProvider>
-        </HRouter>
+        </Router>
         }
     </>
   );

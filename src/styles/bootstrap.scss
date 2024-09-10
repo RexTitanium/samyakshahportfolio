@@ -96,6 +96,20 @@
     background: black !important;
   }
   
+  .bg-orange {
+    background-color: #ff5e00 !important;
+  }
+
+  .bg-red {
+    background-color: #ff0000 !important;
+  }
+
+  .hover-dark-orange {
+    &:hover {
+      background-color: #db5000 !important;
+    }
+  }
+
   .txt-dark {
     color: #bdbdbd !important;
   }

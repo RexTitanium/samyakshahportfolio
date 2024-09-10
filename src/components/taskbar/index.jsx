@@ -8,10 +8,10 @@ import ReloadIcon from '../../assets/svg/ReloadIcon.tsx'
 import FastForwardIcon from '../../assets/svg/FastForwardIcon.tsx'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Modal, Tooltip } from '@mui/material'
-import { GitHub, LinkedIn } from '@mui/icons-material'
+import { ArrowUpwardRounded, GitHub, LinkedIn } from '@mui/icons-material'
 
 
-function Taskbar({skipToEnd, setSkipToEnd, minimizeTaskbar, setMinimizeTaskbar, storyInView}) {
+function Taskbar({skipToEnd, setSkipToEnd, minimizeTaskbar, setMinimizeTaskbar, storyInView, portfolioInView, homeInView, workInView, contactInView, scrollToHome, scrollToStory, scrollToContact, scrollToPortfolio, scrollToWork}) {
   const {darkMode} = useContext(DarkModeContext)
   const location = useLocation()
   const [pathname, setPathname] = useState('')
@@ -20,7 +20,7 @@ function Taskbar({skipToEnd, setSkipToEnd, minimizeTaskbar, setMinimizeTaskbar, 
   const linkedInLink = 'https://www.linkedin.com/in/samyakkshah/'
   const [reloadIcon, setReloadIcon] = useState(false)
   
-  
+  const navigate = useNavigate()
 
   React.useEffect(() => {
     setPathname((location.pathname).replace('/','')) 
@@ -47,9 +47,34 @@ function Taskbar({skipToEnd, setSkipToEnd, minimizeTaskbar, setMinimizeTaskbar, 
     }, 2000);
   }
 
+  const handleHomeBtn = () => {
+    if(window.innerWidth<=768) scrollToHome()
+    else navigate('home')
+  }
+
+  const handleStoryBtn = () => {
+    if(window.innerWidth<=768) scrollToStory()
+    else navigate('mystory')
+  }
+
+  const handleWorkBtn = () => {
+    if(window.innerWidth<=768) scrollToWork()
+    else navigate('work')
+  }
+
+  const handlePortfolioBtn = () => {
+    if(window.innerWidth<=768) scrollToPortfolio()
+    else navigate('portfolio')
+  }
+
+  const handleContactBtn = () => {
+    if(window.innerWidth<=768) scrollToContact()
+    else navigate('contactme')
+  }
+
   return (
     <div className="transition-150-ease">
-      {window.innerWidth > 768 && 
+      { 
       <div className={`transition-150-ease ${minimizeTaskbar ? 'taskbar-minimized' : 'taskbar-container'}`}>
         {minimizeTaskbar ? 
           <div className={`taskbar-wrapper-minimized ${darkMode ? 'taskbar-dark': 'taskbar-light' }`}>
@@ -62,21 +87,21 @@ function Taskbar({skipToEnd, setSkipToEnd, minimizeTaskbar, setMinimizeTaskbar, 
           :
           <><div className={`taskbar-wrapper ${darkMode ? 'taskbar-dark': 'taskbar-light' }`}>
             <div className="taskbar-links">
-              <Link to='home' className={pathname === 'home' ? 'link-active' :''}>
+              <div onClick={() => handleHomeBtn()} className={(pathname === 'home' || homeInView) ? 'link-active' :''}>
                 Home
-              </Link>
-              <Link to='mystory' className={pathname === 'mystory' ? 'link-active' :''}>
+              </div>
+              <div onClick={() => handleStoryBtn()} className={(pathname === 'mystory' || storyInView) ? 'link-active' :''}>
                 Story
-              </Link>
-              <Link to='work' className={pathname === 'work' ? 'link-active' :''}>
+              </div>
+              <div onClick={() => handleWorkBtn()} className={(pathname === 'work' || workInView)? 'link-active' :''}>
                 Work
-              </Link>
-              <Link to='portfolio' className={pathname === 'portfolio' ? 'link-active' :''}>
+              </div>
+              <div onClick={() => handlePortfolioBtn()} className={(pathname === 'portfolio' || portfolioInView) ? 'link-active' :''}>
                 Portfolio
-              </Link>
-              <Link to='contactme' className={pathname === 'contactme' ? 'link-active' :''}>
+              </div>
+              <div onClick={() => handleContactBtn()} className={(pathname === 'contactme' || contactInView)? 'link-active' :''}>
                 Contact
-              </Link>
+              </div>
             </div>
             <div className={`social-media-links flex flexDirectionRow ${window.innerWidth <= 768 ? 'jc-l' : 'jc-c'} align-c gp-sm`}>
               <GitHub className='github-logo transition-150-ease pointer' onClick={() => handleRedirect(githubLink)}/>
@@ -95,22 +120,27 @@ function Taskbar({skipToEnd, setSkipToEnd, minimizeTaskbar, setMinimizeTaskbar, 
       {(pathname === 'mystory' || (window.innerWidth <= 768 && storyInView)) &&
             <div>
               <div className={`reload-component-container${minimizeTaskbar ? '-minimized' : ''} flex gp-sm jc-c align-c`}>
-                <Tooltip title={'Restart Story Mode'} arrow placement='top'><div className={`reload-component br-circle ${minimizeTaskbar && 'no-shadow'} ${darkMode ? 'taskbar-dark' : 'taskbar-light'} ${reloadIcon ? 'reload-animation' : ''}`} onClick={() => {handleReload()}}><ReloadIcon /></div></Tooltip>
-                <Tooltip title={skipToEnd ? 'Back To Story Mode':'Skip Story Mode'} arrow placement='top'><div className={`${skipToEnd ? 'gb-component': 'ff-component'} ${minimizeTaskbar && 'no-shadow'} ${darkMode ? 'taskbar-dark' : 'taskbar-light'} flex justifyContenCenter align-c`} onClick={() => setSkipToEnd(!skipToEnd)}>
+                <Tooltip title={'Restart Story Mode'} arrow placement='top'><div className={`reload-component br-circle ${minimizeTaskbar && 'no-shadow'} bg-orange hover-dark-orange  ${reloadIcon ? 'reload-animation' : ''}`} onClick={() => {handleReload()}}><ReloadIcon /></div></Tooltip>
+                <Tooltip title={skipToEnd ? 'Back To Story Mode':'Skip Story Mode'} arrow placement='top'><div className={`${skipToEnd ? 'gb-component': 'ff-component'} ${minimizeTaskbar && 'no-shadow'} bg-orange hover-dark-orange flex justifyContenCenter align-c`} onClick={() => setSkipToEnd(!skipToEnd)}>
                   {skipToEnd ? <FastForwardIcon className='goback-icon' /> :<FastForwardIcon/>}</div></Tooltip>
                 </div>
             </div>
             }
-      {pathname === 'portfolio' &&
+      {(pathname === 'portfolio' || (window.innerWidth <= 768 && portfolioInView)) &&
             <div className={`pdf-component-container${minimizeTaskbar ? '-minimized' : ''}`}>
-              <div className={`pdf-component ${minimizeTaskbar && 'no-shadow'} ${darkMode ? 'taskbar-dark' : 'taskbar-light'}`} onClick={!minimizeTaskbar && togglePDF}>PDF</div>
+              <div className={`pdf-component ${minimizeTaskbar && 'no-shadow'} bg-orange hover-dark-orange`} onClick={!minimizeTaskbar && togglePDF}>PDF</div>
             </div>}
+      {(window.innerWidth<=768 && !homeInView) && 
+        <div className={`up-arrow-component-container${minimizeTaskbar ? '-minimized' : ''}`} >
+          <div className={`up-arrow-component ${minimizeTaskbar && 'no-shadow'} bg-red`} onClick={scrollToHome}><ArrowUpwardRounded/></div>
+        </div>
+      }
             <Modal
               open={openPDF}
               onClose={togglePDF}
               className='modal-narrow'
             >
-              <iframe src='../../../assets/pdf/resume.pdf' className='fullDims'/>
+              <iframe src='/assets/pdf/resume.pdf' className='fullDims'/>
             </Modal>
     </div>
   )

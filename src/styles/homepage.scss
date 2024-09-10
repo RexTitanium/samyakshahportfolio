@@ -154,10 +154,11 @@
     }
 
     .homepage-buttons {
-        width: 25vh;
+        width: -webkit-fill-available;
         > button {
-            padding: 1vh;
+            padding: 2vw;
             height: 3.5vh;
+            width: fit-content;
         }
     }
   }
