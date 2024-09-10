@@ -1,6 +1,6 @@
 import './App.scss';
 import './Animations.scss'
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, HashRouter as HRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Taskbar from './components/taskbar';
 import { DarkModeProvider } from './context/DarkModeContext';
 import Home from './views/home';
@@ -9,14 +9,19 @@ import Portfolio from './views/portfolio';
 import Contact from './views/contact'
 import './styles/bootstrap.scss'
 import About from './views/aboutme';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import {motion, useInView, useAnimation, useIsPresent} from 'framer-motion'
 
 function App() {
   const [skipToEnd, setSkipToEnd] = useState(false)
   const [minimizeTaskbar, setMinimizeTaskbar] = useState(false)
+
+  const storyView = useRef(null)
+  const storyInView = useInView(storyView)
   return (
-    
-    <Router>
+    <>
+    {window.innerWidth > 768 ?
+      <Router>
         <DarkModeProvider setMinimizeTaskbar={setMinimizeTaskbar}>
               <Taskbar skipToEnd={skipToEnd} setSkipToEnd={setSkipToEnd} minimizeTaskbar={minimizeTaskbar} setMinimizeTaskbar={ setMinimizeTaskbar}/>
                 <Routes>
@@ -29,6 +34,22 @@ function App() {
                 </Routes>
         </DarkModeProvider>
         </Router>
+        :
+
+        <HRouter>
+          <DarkModeProvider setMinimizeTaskbar={setMinimizeTaskbar}>
+            <Home/>
+            <Work />
+            <div className='fullDims flex jc-c align-c'><div ref={storyView}>
+              {storyInView && <About props={{skipToEnd, setSkipToEnd}}/>} 
+              {storyInView && <Taskbar skipToEnd={skipToEnd} setSkipToEnd={setSkipToEnd} minimizeTaskbar={minimizeTaskbar} setMinimizeTaskbar={ setMinimizeTaskbar} storyInView={storyInView}/>}
+              </div></div>
+            <Portfolio/>
+            <Contact/>
+          </DarkModeProvider>
+        </HRouter>
+        }
+    </>
   );
 }
 

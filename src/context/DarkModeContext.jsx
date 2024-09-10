@@ -41,12 +41,12 @@ function DarkModeProvider(props) {
 
     return(
         <div className={`app-main ${darkMode ? 'app-dark' : 'app-light'}`}>
-            <div className={`arrow-left ${darkMode ? 'color-light' : 'color-dark'}`} onClick={()=> handlePrev()}><NavigateBeforeRounded /></div>
+            {window.innerWidth > 768 && <div className={`arrow-left ${darkMode ? 'color-light' : 'color-dark'}`} onClick={()=> handlePrev()}><NavigateBeforeRounded /></div>}
             <DarkModeContext.Provider value={{darkMode, toggleDarkMode}}>
                 {props.children}
             </DarkModeContext.Provider>
             
-            <div className={`arrow-right ${darkMode ? 'color-light' : 'color-dark'}`} onClick={()=> handleNext()}><NavigateNextRounded /></div>
+            {window.innerWidth > 768 && <div className={`arrow-right ${darkMode ? 'color-light' : 'color-dark'}`} onClick={()=> handleNext()}><NavigateNextRounded /></div>}
         </div>
     )
 };

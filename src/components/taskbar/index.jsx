@@ -11,7 +11,7 @@ import { Modal, Tooltip } from '@mui/material'
 import { GitHub, LinkedIn } from '@mui/icons-material'
 
 
-function Taskbar({skipToEnd, setSkipToEnd, minimizeTaskbar, setMinimizeTaskbar}) {
+function Taskbar({skipToEnd, setSkipToEnd, minimizeTaskbar, setMinimizeTaskbar, storyInView}) {
   const {darkMode} = useContext(DarkModeContext)
   const location = useLocation()
   const [pathname, setPathname] = useState('')
@@ -19,12 +19,11 @@ function Taskbar({skipToEnd, setSkipToEnd, minimizeTaskbar, setMinimizeTaskbar})
   const githubLink = 'https://www.github.com/RexTitanium/'
   const linkedInLink = 'https://www.linkedin.com/in/samyakkshah/'
   const [reloadIcon, setReloadIcon] = useState(false)
-
   
   
 
   React.useEffect(() => {
-    setPathname((location.pathname).replace('/',''))
+    setPathname((location.pathname).replace('/','')) 
   }, [location]);
 
   const togglePDF = () => {
@@ -50,6 +49,7 @@ function Taskbar({skipToEnd, setSkipToEnd, minimizeTaskbar, setMinimizeTaskbar})
 
   return (
     <div className="transition-150-ease">
+      {window.innerWidth > 768 && 
       <div className={`transition-150-ease ${minimizeTaskbar ? 'taskbar-minimized' : 'taskbar-container'}`}>
         {minimizeTaskbar ? 
           <div className={`taskbar-wrapper-minimized ${darkMode ? 'taskbar-dark': 'taskbar-light' }`}>
@@ -91,8 +91,8 @@ function Taskbar({skipToEnd, setSkipToEnd, minimizeTaskbar, setMinimizeTaskbar})
           </div>
           </>
         }
-      </div>
-      {pathname === 'mystory' &&
+      </div>}
+      {(pathname === 'mystory' || (window.innerWidth <= 768 && storyInView)) &&
             <div>
               <div className={`reload-component-container${minimizeTaskbar ? '-minimized' : ''} flex gp-sm jc-c align-c`}>
                 <Tooltip title={'Restart Story Mode'} arrow placement='top'><div className={`reload-component br-circle ${minimizeTaskbar && 'no-shadow'} ${darkMode ? 'taskbar-dark' : 'taskbar-light'} ${reloadIcon ? 'reload-animation' : ''}`} onClick={() => {handleReload()}}><ReloadIcon /></div></Tooltip>

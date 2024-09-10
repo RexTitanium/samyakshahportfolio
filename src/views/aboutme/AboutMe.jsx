@@ -9,7 +9,7 @@ function AboutMe({props}) {
     <div className={`non-story flex ${window.innerWidth <= 768 ? 'flexDirectionColumn' : 'flexDirectionRow'} jc-c align-c`}>
       <div className='flex flexDirectionColumn gp-md align-c'>
         <div className='profile-picture-container'>
-          <img src='/assets/images/Samyak.jpg' className='profile-picture'/>
+          <img src='https://firebasestorage.googleapis.com/v0/b/samyakshahportfolio.appspot.com/o/Samyak.jpg?alt=media&token=4b1d776b-f8d7-417a-99e4-c071894a4a5d' className='profile-picture'/>
         </div>
         <div className='aboutme-desc-container'>
           <div className="aboutme-desc-intro">

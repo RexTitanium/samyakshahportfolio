@@ -73,6 +73,7 @@ export const portfolio_data = {
         list: [
             {
                 position: 'Software Developer Intern',
+                companyLogo: 'soopra.png',
                 company: 'Soopra.ai',
                 location: 'San Francisco, USA',
                 duration: 'May 2024 - Present',
@@ -84,6 +85,7 @@ export const portfolio_data = {
             {
                 position: 'Software Developer Intern',
                 company: 'Continuum',
+                companyLogo: 'continuum.png',
                 location: 'Mumbai, India',
                 duration: 'July 2021 - August 2021',
                 responsibilities: [

@@ -39,7 +39,7 @@ function About({props}) {
         {showStory &&
         <div>
           <div className='profile-picture-container'>
-            <img src='/assets/images/Samyak.jpg' className='profile-picture'/>
+            <img src='https://firebasestorage.googleapis.com/v0/b/samyakshahportfolio.appspot.com/o/Samyak.jpg?alt=media&token=4b1d776b-f8d7-417a-99e4-c071894a4a5d' className='profile-picture'/>
           </div>
         <TypeAnimation
         sequence={[...story_mode_data, () => handleTypingAnimationComplete()]}

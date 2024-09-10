@@ -43,8 +43,9 @@ function Portfolio() {
                     <div>{exp.position} | {exp.location}</div>
                     <div>{exp.duration}</div>
                   </div> 
-                  <div>
-                    <i>{exp.company}</i>
+                  <div className='flex flexDirectionRow gp-md'>
+                    <i>{exp.company} </i>
+                    <img className='company-logo' style={{width: 'auto', height: '2vh'}} src={`/assets/images/${exp?.companyLogo}`} alt='company logo' />
                   </div>
                   <ul>
                     {exp.responsibilities.map((bp) => {
