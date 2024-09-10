@@ -4,7 +4,7 @@ import { DarkModeContext } from '../../context/DarkModeContext'
 import { Modal } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
-function Home() {
+function Home({scrollToWork}) {
 
   const [index, setIndex] = useState(0)
 
@@ -51,6 +51,13 @@ function Home() {
 
   const navigate = useNavigate()
 
+  const handleWorkBtn = () => {
+    if (window.innerWidth <= 768) {
+      scrollToWork()
+    }
+    else navigate('/work')
+  }
+
   return (
     <div className={'homepage-container'} id='home-main'>
       <div className={`homepage-greetings`}>
@@ -67,7 +74,7 @@ function Home() {
           I solve real world problems with innovative solutions using AIML models and Full Stack Developement.
         </div>
         <div className='homepage-buttons'>
-          <button onClick={() => navigate('/work')}>My Work</button>
+          <button onClick={() => handleWorkBtn()}>My Work</button>
           <button className='pointer' onClick={() => setOpenPDF(true)}>My Resume</button>
         </div>
       </div>

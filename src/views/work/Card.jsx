@@ -121,7 +121,7 @@ function Card(props) {
             onClose={handleCloseModal}
             className={`transition-150-ease modal ${toggleMax ? 'fullDims' : 'br-md'}`}
         >
-           <div className={`${window.innerWidth <= 768 ?'':'fullDims'} flex flexDirectionColumn ${darkMode ? 'bg-dark-grey' : 'bg-light-grey'} `}>
+           <div className={`${window.innerWidth <= 768 ?'fullHeight':'fullDims'} flex flexDirectionColumn ${darkMode ? 'bg-dark-grey' : 'bg-light-grey'} `}>
             <div className="navbar flex px-sm jc-sb align-c gp-xlg">
                 <div className={`navbar-link-text ${darkMode ? 'border-dark': 'border-light'}`}>
                     <input className='fullWidth' value={linkToShow} id='link-text-input'/>

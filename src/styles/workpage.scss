@@ -312,6 +312,8 @@ iframe {
     }
 
     .modal {
+        width: 80vw;
+        height: 90vh;
         overflow-y: scroll;
     }
     .card-modal-info-wrapper {
@@ -319,8 +321,8 @@ iframe {
     }
     
     .modal-sidebar {
-        width: -webkit-fill-available;
-        padding: 20px;
+        width: -webkit-fill-available !important;
+        padding: 20px !important;
     }
 
     .website-container {

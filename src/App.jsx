@@ -18,6 +18,10 @@ function App() {
 
   const storyView = useRef(null)
   const storyInView = useInView(storyView)
+
+  const workRef = useRef(null)
+
+  const scrollToWork = () => workRef.current.scrollIntoView()  
   return (
     <>
     {window.innerWidth > 768 ?
@@ -38,12 +42,16 @@ function App() {
 
         <HRouter>
           <DarkModeProvider setMinimizeTaskbar={setMinimizeTaskbar}>
-            <Home/>
-            <Work />
-            <div className='fullDims flex jc-c align-c'><div ref={storyView}>
-              {storyInView && <About props={{skipToEnd, setSkipToEnd}}/>} 
-              {storyInView && <Taskbar skipToEnd={skipToEnd} setSkipToEnd={setSkipToEnd} minimizeTaskbar={minimizeTaskbar} setMinimizeTaskbar={ setMinimizeTaskbar} storyInView={storyInView}/>}
+            <Home scrollToWork={scrollToWork}/>
+            <div className='fullDims flex jc-c align-c'>
+              <div ref={storyView} style={{minWidth: '10vw', minHeight: '10vh'}}>
+              {storyInView &&
+              <>
+                <About props={{skipToEnd, setSkipToEnd}}/>
+              </>
+              }
               </div></div>
+            <div ref={workRef}><Work /></div>
             <Portfolio/>
             <Contact/>
           </DarkModeProvider>
