@@ -10,12 +10,21 @@ import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import Clipboard from 'react-clipboard-animation'
 import { ArrowOutwardRounded } from '@mui/icons-material'
-import {CssIcon, GitIcon, PythonIcon, NodeIcon, TfIcon, HtmlIcon, ReactIcon, ExpressIcon, JsIcon, MongoIcon, OpenCVIcon, FirebaseIcon, ReduxIcon} from '../../assets/svg/skills/SkillIcons.tsx'
+import {CssIcon, GitIcon, PythonIcon, NodeIcon, TfIcon, HtmlIcon, ReactIcon, ExpressIcon, JsIcon, MongoIcon, OpenCVIcon, FirebaseIcon, ReduxIcon, PyTorchIcon, ScikitLearnIcon} from '../../assets/svg/skills/SkillIcons.tsx'
+
+const getRandomGradient = () => {
+    const colors = ["#6e8efb", "#a777e3", "#ff6b6b", "#4ecdc4", "#45b7d1"];
+    const random1 = colors[Math.floor(Math.random() * colors.length)];
+    const random2 = colors[Math.floor(Math.random() * colors.length)];
+    const random3 = colors[Math.floor(Math.random() * colors.length)];
+    return `linear-gradient(135deg, ${random1} 0%, ${random2} 50%, ${random3} 100%)`;
+};
+
 
 function Card(props) {
 
     const {card} = props
-
+    const fallbackStyle = { background: getRandomGradient() };
     const {darkMode} = useContext(DarkModeContext)
     const [toggleMax, setMax] = useState(false)
     const [showLinks, setShowLinks] = useState(false)
@@ -30,6 +39,7 @@ function Card(props) {
           'CSS': <CssIcon />,
           'Git': <GitIcon />,
           'Python': <PythonIcon />,
+          'Tkinter': <PythonIcon/>,
           'Node': <NodeIcon />,
           'TensorFlow': <TfIcon />,
           'HTML': <HtmlIcon />,
@@ -39,7 +49,9 @@ function Card(props) {
           'MongoDB': <MongoIcon />,
           'OpenCV': <OpenCVIcon />,
           'Firebase': <FirebaseIcon />,
-          'Redux': <ReduxIcon/>
+          'Redux': <ReduxIcon/>,
+          'PyTorch': <PyTorchIcon/>,
+          'Scikit-learn': <ScikitLearnIcon/>
         };
       
         // Return the icon component or null if not found
@@ -51,7 +63,7 @@ function Card(props) {
             );
     };
 
-
+    
     const handleOpenModal = (e) => {
         setLinkToShow(e)
         setOpenModel(true)
@@ -97,7 +109,13 @@ function Card(props) {
     <div className="card-container">
         <div onClick={() => handleOpenModal(card.projectLink)}>
             <div className={`transition-150-ease card-bg-img-container`} >
-                <img src={`/assets/images/website_snapshots/${card?.imageLink}`} alt='placeholder'/>
+                {card?.imageLink ? (
+                    <img src={`/assets/images/website_snapshots/${card?.imageLink}`} alt='placeholder'/>
+                ) : (
+                    <div className="fallback-image" style={fallbackStyle}>
+                        <span className="fallback-text">{card?.title}</span>
+                    </div>
+                )}
             </div>
             <div className={`transition-150-ease card-links-container`} >
                 <div className='card-links-list-wrapper'>

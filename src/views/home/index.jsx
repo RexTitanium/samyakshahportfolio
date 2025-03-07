@@ -9,7 +9,7 @@ function Home({scrollToWork}) {
   const [index, setIndex] = useState(0)
 
   const {darkMode} = useContext(DarkModeContext)
-  const role_list = ['Software Developer','Artificial Intelligence','Machine Learning','Front End', 'Back End', 'Full Stack']
+  const role_list = ['Software Developer','Artificial Intelligence','Machine Learning','Front End Developer', 'Back End Developer', 'Full Stack Developer']
   
   const [openPDF, setOpenPDF] = useState(false)
 
@@ -71,7 +71,7 @@ function Home({scrollToWork}) {
           {role_list[index]}
         </div>
         <div className="homepage-desc">
-          I solve real world problems with innovative solutions using AIML models and Full Stack Developement.
+          I solve problems with innovative and creative solutions using Full-Stack Development and AI/ML skills.
         </div>
         <div className='homepage-buttons'>
           <button onClick={() => handleWorkBtn()}>My Work</button>

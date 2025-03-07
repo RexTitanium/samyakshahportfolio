@@ -76,10 +76,11 @@ export const portfolio_data = {
                 companyLogo: 'soopra.png',
                 company: 'Soopra.ai',
                 location: 'San Francisco, USA',
-                duration: 'May 2024 - Present',
+                duration: 'May 2024 - December 2024',
                 responsibilities: [
-                    'Developed a chat widget in React and Django, which allows new users to leverage existing AI system and use their AI personas on personal websites, as a feature, that increased company outreach by 80%.',
-                    'Implemented security features in the backend, which checks for whitelisted websites by the paid user, decreasing unauthorized injections by 90%.'
+                    'Developed a React and Flask-based chat widget for AI integration on personal websites, enabling single line codeinjections and boosting adoption by 10+ users.',
+                    'Strengthened backend security, with whitelisted website validation for paid users, reducing unauthorized widget access by 90%.',
+                    'Engineered a video conferencing tool integrating Google Meetings with AI personas, enhancing user accessibility'
                 ]
             },
             {
@@ -89,8 +90,8 @@ export const portfolio_data = {
                 location: 'Mumbai, India',
                 duration: 'July 2021 - August 2021',
                 responsibilities: [
-                    'Implemented pre-script and post-script features using Angular JS and Java, that allows users to select scripts from the dropdown tool and run them before or after server backup, thus increasing user control by around 50%.',
-                    'Created timer control options for users, to qualify the runtime of scripts, that terminates execution of scripts after specified time thereby reducing the risk during script processing by almost 90%.'
+                    'Built pre-script and post-script automation features using Angular and Java, cutting down manual efforts by 50%.',
+                    'Implemented a customizable cutoff timer control for script automation, minimizing prolonged processing risks by 90%.'
                 ]
             }
         ]

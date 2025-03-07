@@ -15,16 +15,16 @@ function Contact() {
   
   const sendEmail = (e) => {
     e.preventDefault();
-    // emailjs
-    //   .sendForm('service_z6wraiv', 'template_waajedl', form.current,'w3nFg01_N5ium1Zii')
-    //   .then(
-    //     () => {
-    //       console.log('SUCCESS!');
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error.text);
-    //     },
-    //   );
+    emailjs
+      .sendForm('service_z6wraiv', 'template_waajedl', form.current,'w3nFg01_N5ium1Zii')
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
     setFormData({
       from_name: '',
       from_email: '',

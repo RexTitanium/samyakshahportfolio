@@ -47,5 +47,14 @@ export const card_data = [
       githubLink: 'https://github.com/RexTitanium/2048.git',
       description: 'Created a 2048 game in python using Tkinter and implemented game logic and modern ui to make it more interactive.'
     },
-
+    {
+      title: "Croatian Advertisements Classification using BERT",
+      technologies: ["Python", "PyTorch", "Pandas"],
+      description: "Hierarchical text classification system for Croatian ads, achieving 91% Tier 2 accuracy using BERT"
+  },
+  {
+      title: "Transformer – Large Language Model",
+      technologies: ["Python", "PyTorch", "TensorFlow", "Scikit-learn"],
+      description: "Custom GPT-style language model with multi-head self-attention, achieving 20% faster training than baseline architectures."
+  }
 ]
