@@ -37,11 +37,12 @@ function App() {
   const scrollToContact = () => contactRef.current.scrollIntoView()
   const scrollToPortfolio = () => portfolioView.current.scrollIntoView()
   return (
-    <>
+    <div className='app-wrapper'>
     {window.innerWidth > 768 ?
       <Router>
         <DarkModeProvider setMinimizeTaskbar={setMinimizeTaskbar}>
               <Taskbar skipToEnd={skipToEnd} setSkipToEnd={setSkipToEnd} minimizeTaskbar={minimizeTaskbar} setMinimizeTaskbar={ setMinimizeTaskbar}/>
+              <div className="app-main">
                 <Routes>
                   <Route path="*" element={<Navigate to="/home" replace={true} />}/>
                   <Route path='/home' element={<Home/>} />
@@ -49,7 +50,8 @@ function App() {
                   <Route path='/mystory' element={<About props={{skipToEnd, setSkipToEnd}}/>} />
                   <Route path='/portfolio' element={<Portfolio/>} />
                   <Route path='/contactme' element={<Contact/>} />
-                </Routes>
+                </Routes>  
+              </div>
         </DarkModeProvider>
         </Router>
         :
@@ -62,7 +64,6 @@ function App() {
               scrollToContact={scrollToContact} scrollToPortfolio={scrollToPortfolio} scrollToStory={scrollToStory}
               scrollToWork={scrollToWork} workInView={workInView} contactInView={contactInView}
             />
-
             <Routes>
               <Route path="*" element={<Navigate to="/" replace={true} />}/>
             </Routes>
@@ -91,7 +92,7 @@ function App() {
           </DarkModeProvider>
         </Router>
         }
-    </>
+    </div>
   );
 }
 

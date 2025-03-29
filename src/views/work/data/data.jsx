@@ -2,21 +2,30 @@ import { Description } from "@mui/icons-material";
 
 export const card_data = [
     {
+      title: 'Ignition',
+      technologies: ['React', 'MongoDB', 'Express', 'Node', 'JavaScript'],
+      imageLink: 'Ignition.png',
+      projectLink: 'https://ignition-frontend.vercel.app/dashboard',
+      githubLink: 'https://github.com/RexTitanium/ignition-frontend',
+      description: 'Learning Management System with calendar view in dashboard to easily access the assignments and deadline dates.',
+      caution: 'Please use Email: "johndoe@gmail.com" and Password: "johndoe" to test the system'
+    },
+    {
+      title: 'Whiteboard',
+      technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'AWS S3', 'Canvas API'],
+      imageLink: 'Whiteboard.png',
+      projectLink: 'https://whiteboard-2lo3.onrender.com/',
+      githubLink: 'https://github.com/RexTitanium/whiteboard',
+      description: 'Collaborative whiteboard application supporting real-time drawing with tools like pen, shapes, text, undo/redo, grid snapping, and board sharing with role-based access control. Boards are saved on AWS S3 with throttled autosave and optimized storage.',
+      caution: 'Please register with your email or use test@example.com / securepassword to explore the editor.'
+    },    
+    {
       title: 'Titanium Arts',
       technologies: ['React', 'Firebase', 'CSS', 'HTML'],
       imageLink: 'Titanium Arts.png',
       projectLink: 'https://titaniumarts.web.app/',
       githubLink: 'https://github.com/RexTitanium/Titanium-Arts',
       description: 'Website to showcase my digital artworks.'
-    },
-    {
-      title: 'Ignition',
-      technologies: ['React', 'MongoDB', 'Express', 'Node', 'CSS'],
-      imageLink: 'Ignition.png',
-      projectLink: 'https://ignition-frontend.vercel.app/dashboard',
-      githubLink: 'https://github.com/RexTitanium/ignition-frontend',
-      description: 'Learning Management System with calendar view in dashboard to easily access the assignments and deadline dates.',
-      caution: 'Please use Email: "johndoe@gmail.com" and Password: "johndoe" to test the system'
     },
     {
         title: 'Netflix Clone',
